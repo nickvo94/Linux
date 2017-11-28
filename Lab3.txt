@@ -1,0 +1,48 @@
+1)
+-bash-4.1$ #!/bin/bash
+-bash-4.1$ NAME='Hieu Vo'
+-bash-4.1$ EMAIL='hieuv@metropolia.fi'
+-bash-4.1$ echo "My name is: " $NAME
+My name is:  Hieu Vo
+-bash-4.1$ echo "My email is: " $EMAIL
+My email is:  hieuv@metropolia.fi
+-bash-4.1$
+
+2)
+#!/bin/bash
+tail -n + 1 *
+
+3)
+#!/bin/bash
+sort num-data.txt -k2 -r | head -3
+
+4)
+#!/bin/bash
+BIRTH=1994
+YEAR=2017
+let "AGE = $YEAR - $BIRTH"
+echo $AGE
+
+5)
+#!/bin/bash
+echo "Enter your name and age: "
+read NAME AGE 
+YEAR=2017
+let "BIRTH = $YEAR - $AGE"
+echo $NAME $BIRTH
+
+6)
+#!/bin/bash
+echo "Enter your name and age: "
+YEAR=2017
+NAME=$1
+AGE=$2
+let "BIRTH = $YEAR - $AGE"
+if ["$#" != 2]; then
+echo "Type again with 2 parameters"
+else
+echo "Name:" $NAME
+echo "Birth:" $BIRTH
+fi
+echo $NAME $BIRTH
+

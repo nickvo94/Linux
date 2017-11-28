@@ -1,0 +1,81 @@
+Lab4
+
+1.
+for i do
+    sum=$(expr $sum + $i)
+done
+echo $sum
+
+2.
+
+wget http://users.metropolia.fi/~samisai/unix_2017/companySupport
+
+3.
+#!/bin/bash
+file="companySupports"
+while read line
+do
+echo "$line"
+done<$file
+
+4. 
+#!/bin/bash
+file="companySupports"
+while IFS=' ' read -r f1 f2 f3 f4 f5
+do
+echo "Company name: $f1"
+echo "Support 2013: $f2, Support 2012: $f3, Support 2011: $f4, Change-% 2012-2013: $f5"
+done<"$file"
+
+5. #!/bin/bash
+   file="companySupports"
+   YEAR=$1
+   LIMIT=$2
+   COUNT=0
+   sed 's/ //g' $file > temporaryFile
+   while IFS='	' read -r f1 f2 f3 f4 f5
+   do
+   if [ "$YEAR" = "2011" ] && [ "$f4" -gt "$LIMIT" ]; then
+   	echo "Company name: $f1"
+        echo "Support 2013: $f2, Support 2012: $f3, Support 2011: $f4, Change-% 2012-2013: $f5"
+       	COUNT=$(expr $COUNT + 1)
+   elif [ "$YEAR" = "2012" ] && [ "$f3" -gt "$LIMIT" ]; then
+        echo "Company name: $f1"
+        echo "Support 2013: $f2, Support 2012: $f3, Support 2011: $f4, Change-% 2012-2013: $f5"
+        COUNT=$(expr $COUNT + 1)
+   elif [ "$YEAR" = "2013" ] && [ "$B" -gt "$LIMIT" ]; then
+        echo "Company name: $f1"
+        echo "Support 2013: $f2, Support 2012: $f3, Support 2011: $f4, Change-% 2012-2013: $f5"
+        COUNT=$(expr $COUNT + 1)
+   fi
+   done<"temporaryFile"
+   rm temporaryFile
+   echo "Companies that match the criteria(amount $LIMIT e): $COUNT total."
+
+6. 
+#!/bin/bash
+file="companySupports"
+input=$1
+grep $input $file > searchResult
+while IFS=' ' read -r f1 f2 f3 f4 f5
+do
+  echo "Company name: $f1"
+  echo "Support 2013: $f2, Support 2012: $f3, Support 2011: $f4, Change-% 2012-2013: $f5"
+  done<"searchResult"
+
+7. 
+#!/bin/bash
+echo Hieu Vo > myNote
+date >> myNote
+
+8. 
+crontab -e
+
+In the crontab, press "i" to insert text:
+
+----------Hieu Vo> myFile
+----------date >> myFile
+
+then press Ctrl + C and type ":x" to exit and save
+
+

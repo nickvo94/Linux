@@ -1,0 +1,30 @@
+Lab2
+
+1)
+a) date > time.txt
+b) cal > cal.txt
+c) cal -y > cal2017.txt
+d) date -d 1994-08-23 +%a> myBday.txt
+
+2) 
+a)sort data.txt > alpha-data.txt
+b)sort -n -k 2 -r  data.txt > num-data.txt
+c)sort num-data.txt -k2 -r | head -3
+
+3)
+a)Write :cat > citylist5.txt
+Append:cat >> citylist5.txt
+Sort: sort -n -k 2 -r  citylist.txt > final-num-data.txt
+
+4)
+The inode is a data structure in a Unix-style file system which describes 
+a filesystem object such as a file or a directory. Each inode stores the attributes 
+and disk block location(s) of the object's data. Filesystem object attributes may 
+include metadata (times of last change, access, modification), as well as owner 
+and permission data.
+
+a) yes, dislay command : ls -li or ls -i
+b) df -i
+c) There is a dynamic inode allocation, the amount of inodes depends on the amount of disk space.
+
+5)wget http://en.wikipedia.org/wiki/List_of_cities_proper_by_population -O wikicity.txt 
